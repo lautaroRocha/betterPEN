@@ -1,10 +1,12 @@
 import React from 'react';
+import * as Icons from '../../assets/icons'
 
 const JsEditor = ({setJs}) => {
     return (
-        <textarea onChange={(e) => setJs(e.target.value)}>
-          
-        </textarea>
+        <div className='editor'>
+            {Icons.js}
+            <textarea onChange={(e) => setJs(e.target.value)}/>
+        </div>
     );
 }
 

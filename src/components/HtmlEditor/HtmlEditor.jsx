@@ -1,9 +1,12 @@
 import React from 'react';
+import * as Icons from '../../assets/icons'
 
 const HtmlEditor = ({setHtml}) => {
     return (
-        <textarea onChange={(e) => setHtml(e.target.value)}>
-        </textarea>
+        <div className='editor' tabIndex={0}>
+            {Icons.html}
+            <textarea onChange={(e) => setHtml(e.target.value)}/>
+        </div>
     );
 }
 

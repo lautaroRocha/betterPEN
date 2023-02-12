@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 #root{
@@ -26,4 +27,23 @@ textarea{
 }
 textarea:focus{
   outline: none;
+}
+.editor{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.editor > svg{
+  position: absolute;
+  top: -10%;
+  right: -20%;
+  transform: scale(.5);
+  filter: grayscale(100%);
+  opacity: .5;
+  transition: filter, opacity .5s;
+}
+
+.editor:focus-within > svg{
+  filter: grayscale(20%);
+  opacity: .7;
 }
