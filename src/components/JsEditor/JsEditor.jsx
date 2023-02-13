@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {memo} from 'react';
 import * as Icons from '../../assets/icons'
 import Editor from "@monaco-editor/react";
 
 
-const JsEditor = ({setJs}) => {
+const JsEditor = memo(function JsEditor({setJs}){
 
     const handleEditorChange = (e) => {
         setJs(e)
@@ -12,10 +12,10 @@ const JsEditor = ({setJs}) => {
     return (
         <div className='editor'>
             {Icons.js}
-            <Editor defaultLanguage='javascript' defaultValue="//JS code" onChange={handleEditorChange}         theme="vs-dark"
+            <Editor defaultLanguage='javascript' onChange={handleEditorChange}         theme="vs-dark"
 />
         </div>
     );
-}
+})
 
 export default JsEditor;

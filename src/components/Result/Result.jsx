@@ -1,10 +1,17 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import { CodeContext } from '../../context/CodeContext';
 
-const Result = ({code}) => {
+const Result = () => {
+
+    const {html, css, js} = useContext(CodeContext)
+
+    const resultHtml = '<!DOCTYPE html><html><head><style>'+css+'</style></head><body>'+html+'</body><script>'+js+'</script></html>'
+
+    console.log('render result')
 
 
     return (
-        <iframe srcDoc={'<!DOCTYPE html><html><head><style>'+code.css+'</style></head><body>'+code.html+'</body><script>'+code.js+'</script></html>'}>
+        <iframe srcDoc={resultHtml} style={{backgroundColor: '#f5f5f5'}}>
         </iframe>
     );
 }
