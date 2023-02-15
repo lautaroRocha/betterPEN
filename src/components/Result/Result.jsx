@@ -1,13 +1,13 @@
-import React, {useContext} from 'react';
-import { CodeContext } from '../../context/CodeContext';
+import React from 'react';
+import {useSelector} from 'react-redux'
 
 const Result = () => {
 
-    const {html, css, js} = useContext(CodeContext)
+    const code = useSelector((state) => state.code)
+
+    const {html, css, js} = code
 
     const resultHtml = '<!DOCTYPE html><html><head><style>'+css+'</style></head><body>'+html+'</body><script>'+js+'</script></html>'
-
-    console.log('render result')
 
 
     return (
