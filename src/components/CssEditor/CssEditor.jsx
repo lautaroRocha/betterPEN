@@ -2,12 +2,16 @@ import React, {memo} from 'react';
 import * as Icons from '../../assets/icons'
 import Editor from "@monaco-editor/react";
 import {Spinner} from '../../components'
+import {useDispatch} from 'react-redux'
+import { setCss } from '../../redux/codeSlice';
 
 
-const CssEditor = memo(function CssEditor({setCss}){
+const CssEditor = memo(function CssEditor(){
+
+    const dispatch = useDispatch()
 
     const handleEditorChange = (e) => {
-        setCss(e)
+        dispatch(setCss(e))
     }
 
     return (

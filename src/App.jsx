@@ -1,23 +1,13 @@
 import { CssEditor, HtmlEditor, JsEditor, Result, Header } from "./components"
-import React, {useState, useEffect} from "react"
+import React from "react"
 import Split from 'react-split-grid'
-import { CodeContext } from "./context/CodeContext"
-
+import { store } from './redux/store'
+import { Provider } from 'react-redux'
 
 function App() {
-
-  const [html, setHtml] = useState('')
-  const [css, setCss] = useState('')
-  const [js, setJs] = useState('')
-
-  const code = {
-    html : html,
-    css : css,
-    js : js
-  }
-
+  
   return (
-    <CodeContext.Provider value={code}>
+    <Provider store={store}>
       <Header />
       <Split
         render={({
@@ -25,15 +15,15 @@ function App() {
               getGutterProps,
           }) => (
               <div className="grid" {...getGridProps()}>
-                  <HtmlEditor setHtml={setHtml}/>            
+                  <HtmlEditor/>            
                   <div className="gutter-col gutter-col-1" {...getGutterProps('column', 1)} />
-                  <CssEditor setCss={setCss}/>
-                  <JsEditor setJs={setJs}/>
+                  <CssEditor/>
+                  <JsEditor/>
                   <div className="gutter-row gutter-row-1" {...getGutterProps('row', 1)} />
                   <Result/>
               </div>
     )}/>
-    </CodeContext.Provider>
+    </Provider>
   )
 }
 
