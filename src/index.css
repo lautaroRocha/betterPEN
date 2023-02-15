@@ -38,8 +38,8 @@ body, html{
 
 .grid {
   display: grid;
-  grid-template-rows: 1fr 5px 1fr;
-  grid-template-columns: 1fr 5px 1fr;
+  grid-template-rows: 1fr 10px 1fr;
+  grid-template-columns: 1fr 10px 1fr;
   width: 90%;
   min-height: 95%;
   max-height: 95%;
@@ -49,6 +49,9 @@ body, html{
 .gutter-col {
   grid-row: 1/-1;
   cursor: col-resize;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');
+  background-repeat: no-repeat;
+  background-position: 50%;
 }
 
 .gutter-col-1 {
@@ -62,19 +65,75 @@ body, html{
 
 .gutter-row-1 {
   grid-row: 2;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAFAQMAAABo7865AAAABlBMVEVHcEzMzMzyAv2sAAAAAXRSTlMAQObYZgAAABBJREFUeF5jOAMEEAIEEFwAn3kMwcB6I2AAAAAASUVORK5CYII=');
+  background-repeat: no-repeat;
+  background-position: 50%;
+
+}
+
+.gutter {
+  background-color: #373737;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAFAQMAAABo7865AAAABlBMVEVHcEzMzMzyAv2sAAAAAXRSTlMAQObYZgAAABBJREFUeF5jOAMEEAIEEFwAn3kMwcB6I2AAAAAASUVORK5CYII=');
+
+}
+
+.gutter.gutter-vertical {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAFAQMAAABo7865AAAABlBMVEVHcEzMzMzyAv2sAAAAAXRSTlMAQObYZgAAABBJREFUeF5jOAMEEAIEEFwAn3kMwcB6I2AAAAAASUVORK5CYII=');
+  cursor: row-resize;
+}
+.gutter.gutter-horizontal {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');
+  cursor: col-resize;
+  
+}
+.split{
+  display: flex;
+  width: 90%;
+  min-height: 95%;
+  max-height: 95%;
+  margin-inline: auto;
+}
+.split-editors{
+  height: 100%;
+  width: 50%;
 }
 
 iframe{
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   margin: 0;
   overflow: hidden;
 }
-
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  min-height: 5rem;
+  max-height: 5rem;
+}
 .header>h1{
   color: rgb(236, 220, 47);
   margin: .5rem;
   margin-left: 3rem;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   letter-spacing: .3ch;
+
+}
+.header>div{
+  height: 50px;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.header>div>svg{
+  fill: rgb(236, 220, 47);
+  height: 50%;
+  width: auto;
+  cursor: pointer;
+}
+.header>div>svg:last-of-type{
+  transform: rotate(180deg);
 }

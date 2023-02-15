@@ -1,8 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
 import codeReducer from './codeSlice'
+import layoutReducer from './layoutSlice'
 
 export const store = configureStore({
   reducer: {
-    code : codeReducer
+    code : codeReducer,
+    layout : layoutReducer
   },
 })
