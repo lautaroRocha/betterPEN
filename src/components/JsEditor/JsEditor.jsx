@@ -11,12 +11,9 @@ const JsEditor = memo(function JsEditor(){
     const dispatch = useDispatch()
     const jsCode = useSelector((state)=>state.code.js)
 
-    console.log('render js')
-
     const handleEditorChange = (e) => {
         dispatch(setJs(e))
     }
-
 
     return (
         <div className='editor'>

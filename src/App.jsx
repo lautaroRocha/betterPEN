@@ -6,7 +6,6 @@ import useRecoverCode from "./hooks/useRecoverCode"
 
 function App() {
 
-  console.log('render app')
   useRecoverCode()
   const layout = useSelector((state) => state.layout)
 
