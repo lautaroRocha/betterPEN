@@ -1,9 +1,11 @@
-import React from 'react';
 import {useSelector} from 'react-redux'
+import useEncodeCode from '../../hooks/useEncodeCode';
 
 const Result = () => {
 
     const code = useSelector((state) => state.code)
+
+   const encodeOnChange = useEncodeCode()
 
     const {html, css, js} = code
 

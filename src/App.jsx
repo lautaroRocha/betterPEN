@@ -1,16 +1,13 @@
 import { Header } from "./components"
-import React from "react"
 import {useSelector } from 'react-redux'
 import GridLayout from "./layouts/GridLayout"
 import FlexLayout from "./layouts/FlexLayout"
-import useEncodeCode from "./hooks/useEncodeCode"
-
-
+import useRecoverCode from "./hooks/useRecoverCode"
 
 function App() {
 
-  const encodeOnChange = useEncodeCode()
-
+  console.log('render app')
+  useRecoverCode()
   const layout = useSelector((state) => state.layout)
 
   return (

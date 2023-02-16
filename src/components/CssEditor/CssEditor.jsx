@@ -13,7 +13,6 @@ const CssEditor = memo(function CssEditor(){
 
     console.log('render css')
 
-
     const handleEditorChange = (e) => {
         dispatch(setCss(e))
     }
