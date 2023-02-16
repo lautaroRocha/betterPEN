@@ -3,10 +3,13 @@ import React from "react"
 import {useSelector } from 'react-redux'
 import GridLayout from "./layouts/GridLayout"
 import FlexLayout from "./layouts/FlexLayout"
+import useEncodeCode from "./hooks/useEncodeCode"
 
 
 
 function App() {
+
+  const encodeOnChange = useEncodeCode()
 
   const layout = useSelector((state) => state.layout)
 

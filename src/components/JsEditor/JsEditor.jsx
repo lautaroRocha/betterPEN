@@ -9,12 +9,14 @@ import { setJs } from '../../redux/codeSlice';
 const JsEditor = memo(function JsEditor(){
 
     const dispatch = useDispatch()
+    const jsCode = useSelector((state)=>state.code.js)
+
+    console.log('render js')
 
     const handleEditorChange = (e) => {
         dispatch(setJs(e))
     }
 
-    const jsCode = useSelector((state)=>state.code.js)
 
     return (
         <div className='editor'>

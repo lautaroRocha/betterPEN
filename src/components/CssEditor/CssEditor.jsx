@@ -9,12 +9,15 @@ import { setCss } from '../../redux/codeSlice';
 const CssEditor = memo(function CssEditor(){
 
     const dispatch = useDispatch()
+    const cssCode = useSelector((state)=>state.code.css)
+
+    console.log('render css')
+
 
     const handleEditorChange = (e) => {
         dispatch(setCss(e))
     }
 
-    const cssCode = useSelector((state)=>state.code.css)
 
     return (
         <div className='editor'>

@@ -9,9 +9,13 @@ const HtmlEditor = memo(function HtmlEditor(){
 
     const dispatch = useDispatch()
 
+    
     const handleEditorChange = (e) => {
         dispatch(setHtml(e))
     }
+
+    console.log('redner html')
+
     const htmlCode = useSelector((state)=>state.code.html)
 
     return (
