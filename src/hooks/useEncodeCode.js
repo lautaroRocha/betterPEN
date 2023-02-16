@@ -6,11 +6,7 @@ export default function useEncodeCode(){
     const {html, css, js} = useSelector((state)=>state.code)
 
     useEffect(()=>{
-        if(html === '' && css === '' && js === ''){
-            return}
-            else{
             let encodedCode = `${window.btoa(html)}|${window.btoa(css)}|${window.btoa(js)}`
             window.history.pushState('', '', encodedCode)
-         }
         }, [html, css, js])
 }
