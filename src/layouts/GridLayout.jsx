@@ -10,7 +10,7 @@ const GridLayout = () => {
               getGridProps,
               getGutterProps,
           }) => (
-              <div className="grid" {...getGridProps()}>
+              <div className="grid content" {...getGridProps()}>
                   <HtmlEditor/>            
                   <div className="gutter-col gutter-col-1" {...getGutterProps('column', 1)} />
                   <CssEditor/>

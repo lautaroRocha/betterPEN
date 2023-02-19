@@ -17,8 +17,7 @@ const CssEditor = memo(function CssEditor(){
 
     return (
         <div className='editor'>
-            {Icons.css}
-            <Editor defaultLanguage='css'onChange={handleEditorChange} theme="vs-dark" loading={<Spinner />} defaultValue={cssCode}/>
+            <Editor className='css' defaultLanguage='css'onChange={handleEditorChange} theme="vs-dark" loading={<Spinner />} defaultValue={cssCode}/>
         </div>
     );
 })

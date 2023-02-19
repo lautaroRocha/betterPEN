@@ -16,7 +16,7 @@ const EditorsColumn = () =>{
 const FlexLayout = () => {
     return (
         <Split
-            className="split"
+            className="split content"
             gutterAlign="end"
         >
                 <Split
@@ -27,7 +27,7 @@ const FlexLayout = () => {
                         <CssEditor/>
                         <JsEditor/>
                 </Split>            
-                <Result/>
+                <Result />
         </Split>
     );
 }

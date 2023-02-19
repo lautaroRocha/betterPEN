@@ -22,7 +22,7 @@ const Result = () => {
                         </html>`
 
     return (
-        <iframe srcDoc={resultHtml} style={{backgroundColor: '#f5f5f5'}}>
+        <iframe srcDoc={resultHtml}style={{backgroundColor: '#f5f5f5'}}>
         </iframe>
     );
 }

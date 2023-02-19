@@ -17,8 +17,7 @@ const HtmlEditor = memo(function HtmlEditor(){
 
     return (
         <div className='editor' tabIndex={0}>
-            {Icons.html}
-            <Editor defaultLanguage='html' onChange={handleEditorChange}  theme="vs-dark" loading={<Spinner />} defaultValue={htmlCode}/>
+            <Editor defaultLanguage='html'className="html" onChange={handleEditorChange}  theme="vs-dark" loading={<Spinner />} defaultValue={htmlCode}/>
         </div>
     );
 })
