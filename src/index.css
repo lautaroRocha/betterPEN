@@ -134,12 +134,24 @@ iframe{
   fill: rgb(236, 220, 47);
   cursor: pointer;
 }
-.header>div>span:last-of-type>svg{
-  transform: rotate(180deg);
-}
 .content{
   min-height: calc(100vh - 5rem);
   max-height: calc(100vh - 5rem);
   margin-top: 5rem;
   padding: .5rem;
 } 
+.layout-context-menu{
+  position: absolute;
+  background-color: rgb(78, 78, 78);
+  right: 1.5rem;
+  top: 4rem;
+  transform: opacity .5s ease-in-out;
+  z-index: 12000;
+}
+.layout-context-menu>svg{
+  fill: rgb(236, 220, 47);
+  cursor: pointer;
+}
+.layout-context-menu>svg:last-of-type{
+  transform: rotate(180deg);
+}
