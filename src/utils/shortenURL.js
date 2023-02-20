@@ -4,7 +4,7 @@ export default async function shortenURL(){
     let result = 'error de la funcion'
     const encodedParams = new URLSearchParams();
     const currentURL = window.location.href
-    encodedParams.append("url", currentURL);
+    encodedParams.append("url", 'https://react-hot-toast.com/docs/toast');
 
     const options = {
         method: 'POST',
