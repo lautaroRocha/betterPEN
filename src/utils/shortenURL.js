@@ -4,7 +4,7 @@ export default async function shortenURL(){
     let result = 'error de la funcion'
     const encodedParams = new URLSearchParams();
     const currentURL = window.location.href
-    encodedParams.append("url", 'https://www.google.com/search?q=sinapsis&rlz=1C1ONGR_esAR993AR993&oq=sinapsis&aqs=chrome..69i57j0i131i433i512l3j0i512l2j0i131i433i512j0i512l3.1167j0j7&sourceid=chrome&ie=UTF-8');
+    encodedParams.append("url", currentURL);
 
     const options = {
         method: 'POST',
