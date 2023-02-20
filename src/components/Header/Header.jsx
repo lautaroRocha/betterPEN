@@ -37,7 +37,9 @@ const Header = () => {
                     sharePEN
                 </Link>
             </h1>
+            <Link to="/">
             {Icons.logo}
+            </Link>
             {pathname !== "/" &&
             <>
             <div >
