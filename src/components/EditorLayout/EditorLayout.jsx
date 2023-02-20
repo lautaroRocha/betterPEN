@@ -3,11 +3,8 @@ import {FlexLayout, GridLayout, ReverseFlexLayout}from "../../layouts"
 
 const EditorLayout = () => {
 
-    const layoutSelection = useSelector((state) => state.layout)
+    const layoutSelection = useSelector((state) => state.layout.flexLayout)
     let view 
-
-    console.log(layoutSelection)
-
     switch(layoutSelection){
         case 'flex':
             view = <FlexLayout />

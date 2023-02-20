@@ -1,5 +1,4 @@
 import { Header, EditorLayout } from "./components"
-import {useSelector } from 'react-redux'
 import useRecoverCode from "./hooks/useRecoverCode"
 
 function App() {
