@@ -1,10 +1,28 @@
-import React from 'react';
+import {useSelector} from 'react-redux'
+import useEncodeCode from '../../hooks/useEncodeCode';
 
-const Result = ({code}) => {
+const Result = () => {
 
+    useEncodeCode()
+    const code = useSelector((state) => state.code)
+
+    const {html, css, js} = code
+
+    const resultHtml = `<!DOCTYPE html>
+                        <html><head><style>
+                        ${css}
+                        </style>
+                        </head>
+                        <body>
+                        ${html}
+                        </body>
+                        <script>
+                        ${js}
+                        </script>
+                        </html>`
 
     return (
-        <iframe srcDoc={'<!DOCTYPE html><html><head><style>'+code.css+'</style></head><body>'+code.html+'</body><script>'+code.js+'</script></html>'}>
+        <iframe srcDoc={resultHtml}style={{backgroundColor: '#f5f5f5'}}>
         </iframe>
     );
 }
