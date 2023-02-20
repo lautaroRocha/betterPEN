@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
- flexLayout : false
+ flexLayout : 'flex'
 }
 
 export const layoutSlice = createSlice({
@@ -9,14 +9,17 @@ export const layoutSlice = createSlice({
   initialState,
   reducers: {
     selectGrid: (state) => {
-      state.flexLayout = false
+      state.flexLayout = 'grid'
     },
     selectFlex: (state) => {
-        state.flexLayout = true
+        state.flexLayout = 'flex'
+    },
+    selectReverseFlex: (state)=>{
+      state.flexLayout = 'reverse-flex'
     }
   },
 })
 
-export const { selectGrid, selectFlex } = layoutSlice.actions
+export const { selectGrid, selectFlex, selectReverseFlex } = layoutSlice.actions
 
 export default layoutSlice.reducer

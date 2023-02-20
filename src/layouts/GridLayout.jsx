@@ -1,4 +1,3 @@
-import React from 'react';
 import Split from 'react-split-grid'
 import { CssEditor, HtmlEditor, JsEditor, Result} from "../components"
 
@@ -10,7 +9,7 @@ const GridLayout = () => {
               getGridProps,
               getGutterProps,
           }) => (
-              <div className="grid" {...getGridProps()}>
+              <div className="grid content" {...getGridProps()}>
                   <HtmlEditor/>            
                   <div className="gutter-col gutter-col-1" {...getGutterProps('column', 1)} />
                   <CssEditor/>

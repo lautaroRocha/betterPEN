@@ -9,17 +9,15 @@ import { setCss } from '../../redux/codeSlice';
 const CssEditor = memo(function CssEditor(){
 
     const dispatch = useDispatch()
+    const cssCode = useSelector((state)=>state.code.css)
 
     const handleEditorChange = (e) => {
         dispatch(setCss(e))
     }
 
-    const cssCode = useSelector((state)=>state.code.css)
-
     return (
         <div className='editor'>
-            {Icons.css}
-            <Editor defaultLanguage='css'onChange={handleEditorChange} theme="vs-dark" loading={<Spinner />} defaultValue={cssCode}/>
+            <Editor className='css' defaultLanguage='css'onChange={handleEditorChange} theme="vs-dark" loading={<Spinner />} defaultValue={cssCode}/>
         </div>
     );
 })
