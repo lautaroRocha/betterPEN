@@ -16,8 +16,8 @@ function App() {
                 color: 'rgb(236, 220, 47)',
                 fontWeight: 'light'
               }}} />
-      <Header/>
       <BrowserRouter>
+      <Header/>
       <Routes>
         <Route path="/" element={<HomeLayout />} />
         <Route path="/editor/:code" element={<EditorLayout />}/>

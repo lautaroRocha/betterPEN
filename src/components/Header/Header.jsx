@@ -1,14 +1,17 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import shortenURL from '../../utils/shortenURL'
 import { copyToClipboard } from '../../utils/copyToClipboard';
 import * as Icons from '../../assets/icons'
 import {LayoutContextMenu} from '../../components';
 import toast from 'react-hot-toast';
+import {useLocation, Link} from 'react-router-dom'
 
 
 const Header = () => {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+    const {pathname} = useLocation()
 
     const notify = () => toast.promise(
         shortenURL(),
@@ -30,9 +33,13 @@ const Header = () => {
     return (
         <div className='header'>
             <h1>
-            sharePEN
+                <Link to="/">
+                    sharePEN
+                </Link>
             </h1>
             {Icons.logo}
+            {pathname !== "/" &&
+            <>
             <div >
                 <span onClick={shortenLink} >
                     {Icons.share}
@@ -42,6 +49,8 @@ const Header = () => {
                 </span>
             </div>
             <LayoutContextMenu isOpen={isMenuOpen}/>
+            </>
+            }
         </div>
     );
 }
