@@ -1,8 +1,42 @@
+@keyframes movingPurpleBorder{
+  0%{
+    border-image-source: linear-gradient(0deg, #743ad5, #d53a9d);
+  }
+  25%{
+    border-image-source: linear-gradient(90deg, #743ad5, #d53a9d);
+  }
+  50%{
+    border-image-source: linear-gradient(180deg, #743ad5, #d53a9d);
+  }
+  75%{
+    border-image-source: linear-gradient(2700deg, #743ad5, #d53a9d);
+  }
+  100%{
+    border-image-source: linear-gradient(3600deg, #743ad5, #d53a9d);
+  }
+}
+@keyframes movingGreenBorder{
+  0%{
+    border-image-source: linear-gradient(0deg, #00C853, #B2FF59);
+  }
+  25%{
+    border-image-source: linear-gradient(90deg, #00C853, #B2FF59);
+  }
+  50%{
+    border-image-source: linear-gradient(180deg, #00C853, #B2FF59);
+  }
+  75%{
+    border-image-source: linear-gradient(270deg, #00C853, #B2FF59);
+  }
+  100%{
+    border-image-source: linear-gradient(360deg, #00C853, #B2FF59);
+  }
+}
 .home{
     display: flex;
     flex-direction: column;
     color: rgb(236, 220, 47);
-    padding: 0 2rem;
+    padding: 0 2rem !important;
   }
   .home>h1{
     width: 60%;
@@ -36,40 +70,6 @@
     border-image-slice: 1;
   
   }
-  @keyframes movingPurpleBorder{
-    0%{
-      border-image-source: linear-gradient(0deg, #743ad5, #d53a9d);
-    }
-    25%{
-      border-image-source: linear-gradient(90deg, #743ad5, #d53a9d);
-    }
-    50%{
-      border-image-source: linear-gradient(180deg, #743ad5, #d53a9d);
-    }
-    75%{
-      border-image-source: linear-gradient(2700deg, #743ad5, #d53a9d);
-    }
-    100%{
-      border-image-source: linear-gradient(3600deg, #743ad5, #d53a9d);
-    }
-  }
-  @keyframes movingGreenBorder{
-    0%{
-      border-image-source: linear-gradient(0deg, #00C853, #B2FF59);
-    }
-    25%{
-      border-image-source: linear-gradient(90deg, #00C853, #B2FF59);
-    }
-    50%{
-      border-image-source: linear-gradient(180deg, #00C853, #B2FF59);
-    }
-    75%{
-      border-image-source: linear-gradient(270deg, #00C853, #B2FF59);
-    }
-    100%{
-      border-image-source: linear-gradient(360deg, #00C853, #B2FF59);
-    }
-  }
   .home .violet{
     animation: movingPurpleBorder 5s infinite;
   }
@@ -87,7 +87,7 @@
   
   @media(min-width:500px){
     .home{
-      margin-top: 8rem;
+      margin-top: 8rem !important;
     }
     .home>p{
       width: 60%;
