@@ -1,5 +1,5 @@
 import Split from 'react-split'
-import { CssEditor, HtmlEditor, JsEditor, Result} from "../components"
+import { CssEditor, HtmlEditor, JsEditor, Result} from "../../components"
 
 const FlexLayout = () => {
     return (

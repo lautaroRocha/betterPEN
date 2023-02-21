@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux"
 import {FlexLayout, GridLayout, ReverseFlexLayout}from "../../layouts"
 
-const EditorLayout = () => {
+const EditorPage = () => {
 
     const layoutSelection = useSelector((state) => state.layout.flexLayout)
     let view 
@@ -20,4 +20,4 @@ const EditorLayout = () => {
     return <>{view}</>
 }
 
-export default EditorLayout
+export default EditorPage

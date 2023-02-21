@@ -16,19 +16,21 @@ const LayoutContextMenu = ({isOpen}) =>{
         dispatch(selectReverseFlex())
     }
 
-
     return (
-        <div className='layout-context-menu' style={isOpen ? {opacity : 1} : {opacity:0}}>
-            <span onClick={selectGridLayout}>
-                {Icons.gridLayout}
-            </span>
-            <span onClick={selectReverseFlexLayout}>
-                {Icons.flexLayout}
-            </span>
-            <span onClick={selectFlexLayout}> 
-                {Icons.flexLayout}
-            </span>
-        </div>
+        <>
+            <div className='layout-context-menu' style={isOpen ? {opacity : 1} : {opacity:0}}>
+                <span onClick={selectGridLayout}>
+                    {Icons.gridLayout}
+                </span>
+                <span onClick={selectReverseFlexLayout}>
+                    {Icons.flexLayout}
+                </span>
+                <span onClick={selectFlexLayout}> 
+                    {Icons.flexLayout}
+                </span>
+            </div>
+        
+        </>
     )
 }
 
