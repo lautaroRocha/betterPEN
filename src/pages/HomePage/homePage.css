@@ -78,22 +78,29 @@
     width: 9rem;
     color: #f6f6f6;
     padding: 1rem;
-    border-radius: 1500px;
     margin-bottom: 2rem;
     text-align: center;
     font-weight: 600;
     text-transform: uppercase;
     white-space: nowrap;
     border-image-slice: 1;
-  
+    transition: all .5s ease;
+
   }
+
   .home .violet{
     animation: movingPurpleBorder 5s infinite;
     position: relative;
   }
+  .home .violet:hover:not(span){
+    background: linear-gradient(90deg, rgb(116, 58, 213, .5), rgb(213, 57, 156, .5));
+  }
   .home .green{
     animation: movingGreenBorder 5s infinite;
     position: relative;
+  }
+  .home .green:hover:not(span){
+    background: linear-gradient(90deg, rgb(0, 200, 83, .5), rgb(178, 255, 89,.5));
   }
   .home>p>.violet{
     color: hsl(322, 65%, 63%);
@@ -173,9 +180,8 @@
   @media(min-width:700px){
     .home-images{
       width: 30%;
-      transform: scale(1.5);
+      transform: scale(1.2);
       top: 10rem;
-
     }
   }
   
