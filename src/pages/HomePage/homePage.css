@@ -1,0 +1,100 @@
+.home{
+    display: flex;
+    flex-direction: column;
+    color: rgb(236, 220, 47);
+    padding: 0 2rem;
+  }
+  .home>h1{
+    width: 60%;
+    font-size: clamp(1rem, 10vw, 3rem);
+    z-index: 3;
+  }
+  .home>p{
+    width: 90%;
+    font-size: clamp(.5rem, 5vw, 1.5rem);
+    font-weight: 500;
+    margin-bottom: 3rem;
+    line-height: 3ch;
+    z-index: 3;
+  }
+  .home>div{
+    display: flex;
+    flex-direction: column;
+    z-index: 3;
+  }
+  .home .btn{
+    border: 3px solid;
+    width: 9rem;
+    color: #f6f6f6;
+    padding: 1rem;
+    border-radius: 1500px;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 600;
+    text-transform: uppercase;
+    white-space: nowrap;
+    border-image-slice: 1;
+  
+  }
+  @keyframes movingPurpleBorder{
+    0%{
+      border-image-source: linear-gradient(0deg, #743ad5, #d53a9d);
+    }
+    25%{
+      border-image-source: linear-gradient(90deg, #743ad5, #d53a9d);
+    }
+    50%{
+      border-image-source: linear-gradient(180deg, #743ad5, #d53a9d);
+    }
+    75%{
+      border-image-source: linear-gradient(2700deg, #743ad5, #d53a9d);
+    }
+    100%{
+      border-image-source: linear-gradient(3600deg, #743ad5, #d53a9d);
+    }
+  }
+  @keyframes movingGreenBorder{
+    0%{
+      border-image-source: linear-gradient(0deg, #00C853, #B2FF59);
+    }
+    25%{
+      border-image-source: linear-gradient(90deg, #00C853, #B2FF59);
+    }
+    50%{
+      border-image-source: linear-gradient(180deg, #00C853, #B2FF59);
+    }
+    75%{
+      border-image-source: linear-gradient(270deg, #00C853, #B2FF59);
+    }
+    100%{
+      border-image-source: linear-gradient(360deg, #00C853, #B2FF59);
+    }
+  }
+  .home .violet{
+    animation: movingPurpleBorder 5s infinite;
+  }
+  .home .green{
+    animation: movingGreenBorder 5s infinite;
+  }
+  .home>p>.violet{
+    color: hsl(322, 65%, 63%);
+    font-weight: 800;
+  }
+  .home>p>.green{
+    color: #00C853;
+    font-weight: 800;
+  }
+  
+  @media(min-width:500px){
+    .home{
+      margin-top: 8rem;
+    }
+    .home>p{
+      width: 60%;
+    }
+    .home>div{
+      flex-direction: row;
+      margin-top: 3rem;
+      gap: 2rem;
+    }
+  }

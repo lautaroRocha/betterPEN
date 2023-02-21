@@ -1,6 +1,7 @@
-import { Header, EditorLayout, HomeLayout} from "./components"
+import { Header} from "./components"
 import {Toaster} from 'react-hot-toast'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import {HomePage, EditorPage} from './pages'
 
 
 function App() {
@@ -19,8 +20,8 @@ function App() {
       <BrowserRouter>
       <Header/>
       <Routes>
-        <Route path="/" element={<HomeLayout />} />
-        <Route path="/editor/:code" element={<EditorLayout />}/>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/editor/:code" element={<EditorPage/>}/>
       </Routes>
       
       </BrowserRouter>

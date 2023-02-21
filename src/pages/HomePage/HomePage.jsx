@@ -1,6 +1,6 @@
 import {Link} from 'react-router-dom'
 
-const HomeLayout = () => {
+const HomePage = () => {
     return (
         <div className="content home">
             <h1>
@@ -12,10 +12,12 @@ const HomeLayout = () => {
                  <span className="green"> sharing  </span> 
                 websites using HTML, CSS, and JavaScript
             </p>
-            <Link className='btn violet' to="editor/%7C%7C">start coding</Link>
-            <Link className='btn green' to='/explore'>Explore</Link>
+            <div>
+                <Link className='btn violet' to="editor/%7C%7C">start coding</Link>
+                <Link className='btn green' to='/explore'>Explore</Link>
+            </div>
         </div>
     )
 }
 
-export default HomeLayout
+export default HomePage

@@ -1,5 +1,5 @@
 import Split from 'react-split-grid'
-import { CssEditor, HtmlEditor, JsEditor, Result} from "../components"
+import { CssEditor, HtmlEditor, JsEditor, Result} from "../../components"
 
 
 const GridLayout = () => {

@@ -1,0 +1,34 @@
+.editor{
+    position: relative;
+    overflow: hidden;
+  }
+  .html:after, .css:after, .js:after{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 200px;
+    width: 35px;
+    background: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg') no-repeat;
+    content: ' ';
+    z-index: 3000;
+    filter: grayscale(100%);
+    opacity: .5;
+    transition: filter, opacity .5s;
+  }
+  .css:after{
+    background: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg') no-repeat;
+  }
+  .js:after{
+    background: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg') no-repeat;
+  }
+  .editor:focus-within .css:after, .editor:focus-within .js:after,.editor:focus-within .html:after{
+    filter: grayscale(20%);
+    opacity: .7;
+  }
+  
+  iframe{
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    overflow: hidden;
+  }

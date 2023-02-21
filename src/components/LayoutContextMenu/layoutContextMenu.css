@@ -1,0 +1,16 @@
+.layout-context-menu{
+    position: absolute;
+    background-color: rgb(78, 78, 78);
+    top: 4rem;
+    right: 0;
+    transform: opacity .5s ease-in-out;
+    z-index: 12000;
+    padding: 1rem;
+  }
+  .layout-context-menu>svg{
+    fill: rgb(236, 220, 47);
+    cursor: pointer;
+  }
+  .layout-context-menu>span:last-of-type>svg{
+    transform: rotate(180deg);
+  }
