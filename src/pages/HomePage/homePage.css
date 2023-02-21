@@ -32,6 +32,23 @@
     border-image-source: linear-gradient(360deg, #00C853, #B2FF59);
   }
 }
+@keyframes movingColors{
+  0%{
+    filter: hue-rotate(0deg);
+  }
+  25%{
+    filter: hue-rotate(70deg);
+  }
+  50%{
+    filter: hue-rotate(180deg);
+  }
+  75%{
+    filter: hue-rotate(270deg);
+  }
+  100%{
+    filter: hue-rotate(360deg);
+  }
+}
 .home{
     display: flex;
     flex-direction: column;
@@ -41,7 +58,7 @@
   .home>h1{
     width: 60%;
     font-size: clamp(1rem, 10vw, 3rem);
-    z-index: 3;
+    z-index: 30000;
   }
   .home>p{
     width: 90%;
@@ -49,7 +66,7 @@
     font-weight: 500;
     margin-bottom: 3rem;
     line-height: 3ch;
-    z-index: 3;
+    z-index: 30000;
   }
   .home>div{
     display: flex;
@@ -72,9 +89,11 @@
   }
   .home .violet{
     animation: movingPurpleBorder 5s infinite;
+    position: relative;
   }
   .home .green{
     animation: movingGreenBorder 5s infinite;
+    position: relative;
   }
   .home>p>.violet{
     color: hsl(322, 65%, 63%);
@@ -83,8 +102,61 @@
   .home>p>.green{
     color: #00C853;
     font-weight: 800;
+    margin-right: .5ch;
   }
-  
+  .home>p>span>.hidden{
+      position: absolute;
+      left: 0rem;
+      top: -2.5rem;
+      opacity: 0;
+      background-color: black;
+      padding: 0 .5rem;
+      border-radius: 5px;
+      transition: opacity .3s ease-in-out;
+      width: 100%;
+      text-align: center;
+      height: fit-content;
+  }
+  .home>p>.green>.hidden{
+    top: 2.5rem;
+}
+  .home>p>span:hover>.hidden{
+    opacity: 1;
+  }
+  .home-images {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: absolute;
+      right: 0;
+      width: 40%;
+      height: 40%;
+      transform: scale(1.5);
+      overflow: visible;
+    }
+  .home-images > img {
+    z-index: 2;
+    opacity: .8;
+    width: 100%;
+  }
+  .home-images > .second-img {
+    filter: hue-rotate(70deg);
+    z-index: 10;
+  }
+  .home-images > .third-img {
+    filter: hue-rotate(180deg);
+    transform: scaleY(2);
+  }
+  .home-images > .fourth-img {
+    filter: hue-rotate(0deg);
+    transform: rotate(270deg) scaleX(3) scaleY(2);
+    z-index: 1;
+    animation: movingColors 10s infinite;
+    position: absolute;
+    right: -1.5rem;
+    top: 10rem;
+  }
+
   @media(min-width:500px){
     .home{
       margin-top: 8rem !important;
@@ -92,9 +164,18 @@
     .home>p{
       width: 60%;
     }
-    .home>div{
+    .home>div:first-of-type{
       flex-direction: row;
       margin-top: 3rem;
       gap: 2rem;
     }
   }
+  @media(min-width:700px){
+    .home-images{
+      width: 30%;
+      transform: scale(1.5);
+      top: 10rem;
+
+    }
+  }
+  
