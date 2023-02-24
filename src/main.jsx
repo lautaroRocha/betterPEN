@@ -14,7 +14,8 @@ const firebaseConfig = {
   storageBucket: "share-pen.appspot.com",
   messagingSenderId: "731516834958",
   appId: "1:731516834958:web:dfbfadabb1fc45553525df",
-  measurementId: "G-Q9E2NXZY4E"
+  measurementId: "G-Q9E2NXZY4E",
+  databaseURL: "https://share-pen-default-rtdb.firebaseio.com/"
 };
 const app = initializeApp(firebaseConfig);
 
