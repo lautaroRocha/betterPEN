@@ -2,8 +2,20 @@ import { Header} from "./components"
 import {Toaster} from 'react-hot-toast'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import {HomePage, EditorPage} from './pages'
+import { useSelector, useDispatch } from "react-redux"
+import {resetCode} from './redux/codeSlice'
 
 function App() {
+
+  const dispatch = useDispatch() 
+
+  const hasNavigatedAway = useSelector(
+    (state) => state.navigation.hasNavigatedAway
+  )
+  
+  if(hasNavigatedAway){
+    dispatch(resetCode())
+  }
 
   return (
     <>

@@ -31,10 +31,15 @@ export const codeSlice = createSlice({
     },
     setJs: (state, action) => {
         state.js = action.payload
+    },
+    resetCode: (state) => {
+      state.html = "",
+      state.css =  "",
+      state.js = ""
     }
   },
 })
 
-export const { setHtml, setCss, setJs } = codeSlice.actions
+export const { setHtml, setCss, setJs, resetCode } = codeSlice.actions
 
 export default codeSlice.reducer
