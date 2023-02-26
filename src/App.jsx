@@ -3,7 +3,6 @@ import {Toaster} from 'react-hot-toast'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import {HomePage, EditorPage} from './pages'
 
-
 function App() {
 
   return (
@@ -21,9 +20,8 @@ function App() {
       <Header/>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/editor/:code" element={<EditorPage/>}/>
+        <Route path="/editor/*" element={<EditorPage/>}/>
       </Routes>
-      
       </BrowserRouter>
     </>
   

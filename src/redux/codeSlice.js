@@ -1,9 +1,22 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const initialState = {
-  html: "",
-  css:"",
-  js:""
+const DEFAULT_VALUES = {html:"", css:"", js:""}
+
+const initialState = () => {
+  const {pathname} = window.location
+  let recoveredCode = DEFAULT_VALUES
+  const code = pathname.substring(8)
+  if(pathname.includes('editor')){
+    const keepedCode =  Array.from(code.split('%7C'))
+    recoveredCode = {
+        html : window.atob(keepedCode[0]),
+        css : window.atob(keepedCode[1]),
+        js : window.atob(keepedCode[2])
+    }
+  }
+
+  return recoveredCode
+ 
 }
 
 export const codeSlice = createSlice({
