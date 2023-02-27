@@ -1,21 +1,9 @@
 import { Header} from "./components"
 import {Toaster} from 'react-hot-toast'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import {HomePage, EditorPage} from './pages'
-import { useSelector, useDispatch } from "react-redux"
-import {resetCode} from './redux/codeSlice'
+import {HomePage, EditorPage, ExplorePage} from './pages'
 
 function App() {
-
-  const dispatch = useDispatch() 
-
-  const hasNavigatedAway = useSelector(
-    (state) => state.navigation.hasNavigatedAway
-  )
-  
-  if(hasNavigatedAway){
-    dispatch(resetCode())
-  }
 
   return (
     <>
@@ -33,6 +21,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/editor/*" element={<EditorPage/>}/>
+        <Route path="/explore" element={<ExplorePage/>}/>
       </Routes>
       </BrowserRouter>
     </>

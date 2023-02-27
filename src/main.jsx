@@ -6,7 +6,6 @@ import { store } from './redux/store'
 import {Provider} from'react-redux'
 import { initializeApp } from "firebase/app";
 
-
 const firebaseConfig = {
   apiKey: "AIzaSyD2JrCXAK0st1YU0wEqaHSg8OTYzdn3te0",
   authDomain: "share-pen.firebaseapp.com",
