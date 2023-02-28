@@ -1,8 +1,7 @@
 import { Header} from "./components"
 import {Toaster} from 'react-hot-toast'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import {HomePage, EditorPage} from './pages'
-
+import {HomePage, EditorPage, ExplorePage} from './pages'
 
 function App() {
 
@@ -21,9 +20,9 @@ function App() {
       <Header/>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/editor/:code" element={<EditorPage/>}/>
+        <Route path="/editor/*" element={<EditorPage/>}/>
+        <Route path="/explore" element={<ExplorePage/>}/>
       </Routes>
-      
       </BrowserRouter>
     </>
   

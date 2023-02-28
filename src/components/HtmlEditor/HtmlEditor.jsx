@@ -1,5 +1,4 @@
 import React, {memo} from 'react';
-import * as Icons from '../../assets/icons'
 import Editor from "@monaco-editor/react";
 import {Spinner} from '../../components'
 import {useDispatch, useSelector } from 'react-redux'

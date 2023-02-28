@@ -8,7 +8,7 @@ export default function useRecoverCode(){
     const {code} = useParams();
 
     if(code){
-        const keepedCode =  Array.from(code.split('|'))
+        const keepedCode =  Array.from(code.split('%7C'))
         let recoveredCode = {
             html : window.atob(keepedCode[0]),
             css : window.atob(keepedCode[1]),

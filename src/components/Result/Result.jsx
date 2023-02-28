@@ -1,9 +1,12 @@
 import {useSelector} from 'react-redux'
 import useEncodeCode from '../../hooks/useEncodeCode';
+import useResetCode from '../../redux/useResetCode';
 
 const Result = () => {
 
     useEncodeCode()
+    useResetCode()
+    
     const code = useSelector((state) => state.code)
 
     const {html, css, js} = code

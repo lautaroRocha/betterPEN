@@ -3,6 +3,7 @@
 @import './components/Header/header.css';
 @import './components/LayoutContextMenu/layoutContextMenu.css';
 @import './pages/HomePage/homePage.css';
+@import './components/SavingPenModal/savingPenModal.css';
 
 body, html{
   margin: 0;
