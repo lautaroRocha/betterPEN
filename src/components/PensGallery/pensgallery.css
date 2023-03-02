@@ -1,0 +1,17 @@
+.pens-gallery{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: auto;
+    gap: 10rem;
+    margin-top: 6rem;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+@media(min-width:500px){
+    .pens-gallery{
+        flex-direction: row;
+        height: 100%;
+    }
+}

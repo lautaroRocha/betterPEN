@@ -2,6 +2,7 @@ import { readFromDatabase } from "../../services/readFromDatabase"
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux";
 import { setPens } from "../../redux/pensSlice";
+import {SavedPenMiniature} from "../../components";
 
 function PensGallery() {
 
@@ -21,11 +22,11 @@ function PensGallery() {
     useEffect(()=>{
         getPens()
     }, [])
-    
-    
+
+
   return (
-    <div>
-        {pens && pens.map( (pen, idx) => {return(<h2 key={idx}>{pen.title}</h2>)})}
+    <div className="pens-gallery">
+        {Object.keys(pens).length > 0 ? pens.map( (pen, idx) => {return(<SavedPenMiniature pen={pen} key={idx}/>)}) : <span>VACÏO</span>}
     </div>
   )
 }

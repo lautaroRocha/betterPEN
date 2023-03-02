@@ -4,6 +4,8 @@
 @import './components/LayoutContextMenu/layoutContextMenu.css';
 @import './pages/HomePage/homePage.css';
 @import './components/SavingPenModal/savingPenModal.css';
+@import './components/PensGallery/pensgallery.css';
+@import './components/SavedPenMiniature/savedpenmin.css';
 
 body, html{
   margin: 0;
