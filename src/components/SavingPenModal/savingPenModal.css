@@ -1,0 +1,52 @@
+.saving-modal-overlay{
+    position: absolute;
+    top: 5rem;
+    min-width: 100vw;
+    min-height: calc(100vh - 5rem);
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+.saving-modal{
+    position: absolute;
+    top: 25vh;
+    left: 25vw;
+    right: 25vw;
+    background-color: hsl(0, 0%, 15%);
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    padding: 2rem 0;
+}
+.saving-modal>h2{
+    white-space: nowrap;
+    margin: 0;
+}
+.saving-modal>label{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    gap: 5px;
+}
+.saving-modal>button{
+    padding: .5rem 3rem;
+    background-color: #ecdc2f;
+    font-weight: bold;
+    letter-spacing: .5ch;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.saving-modal>button:hover{
+    background-color: hsl(55, 83%, 45%);
+}
+.saving-modal>label>input{
+    border-radius: 5px;
+    border: 1px solid grey;
+    height: 2rem;
+    padding: .5rem;
+}

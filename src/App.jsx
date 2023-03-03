@@ -1,39 +1,34 @@
-import { CssEditor, HtmlEditor, JsEditor, Result, Header } from "./components"
-import React, {useState, useEffect} from "react"
-import Split from 'react-split-grid'
-import { CodeContext } from "./context/CodeContext"
-
+import { Header} from "./components"
+import {Toaster} from 'react-hot-toast'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import {HomePage, EditorPage, ExplorePage} from './pages'
+import useResetCode from "./redux/useResetCode"
 
 function App() {
 
-  const [html, setHtml] = useState('')
-  const [css, setCss] = useState('')
-  const [js, setJs] = useState('')
-
-  const code = {
-    html : html,
-    css : css,
-    js : js
-  }
+  useResetCode()
 
   return (
-    <CodeContext.Provider value={code}>
-      <Header />
-      <Split
-        render={({
-              getGridProps,
-              getGutterProps,
-          }) => (
-              <div className="grid" {...getGridProps()}>
-                  <HtmlEditor setHtml={setHtml}/>            
-                  <div className="gutter-col gutter-col-1" {...getGutterProps('column', 1)} />
-                  <CssEditor setCss={setCss}/>
-                  <JsEditor setJs={setJs}/>
-                  <div className="gutter-row gutter-row-1" {...getGutterProps('row', 1)} />
-                  <Result/>
-              </div>
-    )}/>
-    </CodeContext.Provider>
+    <>
+      <Toaster  position="top-right"
+            reverseOrder={false}
+            toastOptions={{
+              style: {
+                background: 'hsl(0, 3%, 28%)',
+                padding: '16px',
+                color: 'rgb(236, 220, 47)',
+                fontWeight: 'light'
+              }}} />
+      <BrowserRouter>
+      <Header/>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/editor/*" element={<EditorPage/>}/>
+        <Route path="/explore" element={<ExplorePage/>}/>
+      </Routes>
+      </BrowserRouter>
+    </>
+  
   )
 }
 
