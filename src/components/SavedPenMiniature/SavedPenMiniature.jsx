@@ -1,6 +1,6 @@
 import {useDispatch} from 'react-redux'
-import {setCss, setHtml, setJs} from '../../redux/codeSlice'
-import {Link, useNavigate} from 'react-router-dom'
+import {setCss, setHtml, setJs, setTitle, setAuthor} from '../../redux/codeSlice'
+import {useNavigate} from 'react-router-dom'
 
 const SavedPenMiniature = ( {pen} ) => {
 
@@ -33,6 +33,8 @@ const SavedPenMiniature = ( {pen} ) => {
       dispatch(setCss(css))
       dispatch(setHtml(html))
       dispatch(setJs(js))
+      dispatch(setTitle(title))
+      dispatch(setAuthor(author))
     }
 
     const navigateToEditor = () => navigate('/editor/'+`${window.btoa(html)}|${window.btoa(css)}|${window.btoa(js)}`)
