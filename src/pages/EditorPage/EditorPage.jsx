@@ -3,12 +3,12 @@ import {FlexLayout, GridLayout, ReverseFlexLayout}from "../../layouts"
 import { setHasNavigatedAway } from "../../redux/navigationSlice"
 import { useEffect } from "react"
 
-
 const EditorPage = () => {
 
     const layoutSelection = useSelector((state) => state.layout.flexLayout)
     const dispatch = useDispatch()
     let view 
+
 
     useEffect(() => {
         dispatch(setHasNavigatedAway(false))

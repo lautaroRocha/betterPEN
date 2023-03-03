@@ -10,8 +10,16 @@ const DEFAULT_VALUES = {
 
 const SavingPenModal = ({isOpen, closeModal}) => {
 
-    const [penData, setPenData] = useState(DEFAULT_VALUES)
     const code = useSelector((state) => state.code)
+
+    const {title, author}  = code
+
+    const recoveredValues = {
+        author : author,
+        title : title
+    }
+    
+    const [penData, setPenData] = useState(Boolean(title) ? recoveredValues : DEFAULT_VALUES)
 
     const uploadPen = (e) => {
         e.preventDefault()
@@ -29,10 +37,10 @@ const SavingPenModal = ({isOpen, closeModal}) => {
               Saving Pen
           </h2>
           <label htmlFor="author">Author:
-              <input type="text" name="author" placeholder='Anonymus Programmer' onChange={(e) => {setPenData({author : e.target.value, title: penData.title})}}/>
+              <input type="text" name="author" placeholder={penData.author} onChange={(e) => {setPenData({author : e.target.value, title: penData.title})}}/>
           </label>
           <label htmlFor="title">Title:
-              <input type="text" name="title" placeholder='Anonymus Prototype' onChange={(e) => {setPenData({author : penData.author, title: e.target.value})}}/>
+              <input type="text" name="title" placeholder={penData.title} onChange={(e) => {setPenData({author : penData.author, title: e.target.value})}}/>
           </label>
           <button>SAVE</button>
       </form>

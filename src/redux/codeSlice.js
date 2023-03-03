@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const DEFAULT_VALUES = {html:"", css:"", js:""}
+const DEFAULT_VALUES = {html:"", css:"", js:"", author: "", title : ""}
 
 const initialState = () => {
   const {pathname} = window.location
@@ -32,6 +32,12 @@ export const codeSlice = createSlice({
     setJs: (state, action) => {
         state.js = action.payload
     },
+    setAuthor : (state, action) => {
+      state.author  = action.payload
+    },
+    setTitle : (state, action) => {
+      state.title = action.payload
+    },
     resetCode: (state) => {
       state.html = "",
       state.css =  "",
@@ -40,6 +46,6 @@ export const codeSlice = createSlice({
   },
 })
 
-export const { setHtml, setCss, setJs, resetCode } = codeSlice.actions
+export const { setHtml, setCss, setJs, resetCode, setAuthor, setTitle } = codeSlice.actions
 
 export default codeSlice.reducer

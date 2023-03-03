@@ -16,6 +16,7 @@ const firebaseConfig = {
   measurementId: "G-Q9E2NXZY4E",
   databaseURL: "https://share-pen-default-rtdb.firebaseio.com/"
 };
+
 const app = initializeApp(firebaseConfig);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

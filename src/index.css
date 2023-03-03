@@ -4,12 +4,16 @@
 @import './components/LayoutContextMenu/layoutContextMenu.css';
 @import './pages/HomePage/homePage.css';
 @import './components/SavingPenModal/savingPenModal.css';
+@import './components/PensGallery/pensgallery.css';
+@import './components/SavedPenMiniature/savedpenmin.css';
 
 body, html{
   margin: 0;
   padding: 0;
-  overflow: hidden;
   position: relative;
+  overflow-x: hidden;
+  background-color: hsl(0, 0%, 15%);
+
 }
 *{
   box-sizing: border-box;

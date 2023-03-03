@@ -2,6 +2,7 @@ import { readFromDatabase } from "../../services/readFromDatabase"
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux";
 import { setPens } from "../../redux/pensSlice";
+import {SavedPenMiniature, Spinner} from "../../components";
 
 function PensGallery() {
 
@@ -11,7 +12,6 @@ function PensGallery() {
     const getPens = async()=> {
         try{
             const snapshotValue = await readFromDatabase();
-            console.log(Object.values(snapshotValue))
             dispatch(setPens(Object.values(snapshotValue)));
         } catch (error) {
             console.error("Error fetching data:", error);
@@ -21,11 +21,11 @@ function PensGallery() {
     useEffect(()=>{
         getPens()
     }, [])
-    
-    
+
+
   return (
-    <div>
-        {pens && pens.map( (pen, idx) => {return(<h2 key={idx}>{pen.title}</h2>)})}
+    <div className="pens-gallery">
+        {Object.keys(pens).length > 0 ? pens.map( (pen, idx) => {return(<SavedPenMiniature pen={pen} key={idx}/>)}) : <Spinner/>}
     </div>
   )
 }
