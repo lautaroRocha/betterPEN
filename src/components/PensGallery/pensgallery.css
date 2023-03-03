@@ -1,17 +1,11 @@
 .pens-gallery{
-    display: flex;
-    flex-direction: column;
-    width: 90%;
+    width: 100%;
     margin: auto;
-    gap: 10rem;
     margin-top: 6rem;
-    overflow: hidden;
-    overflow-y: scroll;
+    padding: 3rem;
+    display: grid;
+    grid-gap: 4rem;
+    grid-template-columns: repeat(auto-fill,minmax(300px, 1fr));
+    grid-template-rows: repeat(auto-fill,minmax(300px, 1fr));
 }
 
-@media(min-width:500px){
-    .pens-gallery{
-        flex-direction: row;
-        height: 100%;
-    }
-}

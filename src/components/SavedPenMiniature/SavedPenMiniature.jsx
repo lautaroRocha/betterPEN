@@ -1,3 +1,7 @@
+import {useDispatch} from 'react-redux'
+import {setCss, setHtml, setJs} from '../../redux/codeSlice'
+import {Link, useNavigate} from 'react-router-dom'
+
 const SavedPenMiniature = ( {pen} ) => {
 
     const {title, author, html, css, js} = pen
@@ -5,9 +9,13 @@ const SavedPenMiniature = ( {pen} ) => {
     const preview = `<!DOCTYPE html>
     <html><head><style>
     *{
-        transform: scale(.8) translateY(-3rem);
+      cursor : pointer;
+    }
+    body{
+        transform:  scale(.8) translateY(-11rem);
         overflow: clip;
     }
+   
     ${css}
     </style>
     </head>
@@ -18,14 +26,31 @@ const SavedPenMiniature = ( {pen} ) => {
     ${js}
     </script>
     </html>`
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+
+    const setCodeToPen = () => {
+      dispatch(setCss(css))
+      dispatch(setHtml(html))
+      dispatch(setJs(js))
+    }
+
+    const navigateToEditor = () => navigate('/editor/'+`${window.btoa(html)}|${window.btoa(css)}|${window.btoa(js)}`)
+
+
+    const goToEditor = () => {
+      setCodeToPen();
+      setTimeout(navigateToEditor(), 3500)
+    }
 
   return (
-    <div className="saved-pen-min">
-      <div>
-        <h2>{title}</h2>
-        <h3>{author}</h3>
-      </div>
-        <iframe srcDoc={preview} frameBorder="0"></iframe>
+    <div className="saved-pen-min" onClick={goToEditor}>
+        <iframe srcDoc={preview}  onClick={goToEditor}/>
+        <div>
+          <h2>{title}</h2>
+          <h3>by {author}</h3>
+        </div>
+        <div className="shadow"/>
     </div>
   )
 }

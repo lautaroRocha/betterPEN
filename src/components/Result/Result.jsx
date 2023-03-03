@@ -5,7 +5,7 @@ import useResetCode from '../../redux/useResetCode';
 const Result = () => {
 
     useEncodeCode()
-    useResetCode()
+    // useResetCode()
     
     const code = useSelector((state) => state.code)
 

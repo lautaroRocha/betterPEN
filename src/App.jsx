@@ -2,8 +2,11 @@ import { Header} from "./components"
 import {Toaster} from 'react-hot-toast'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import {HomePage, EditorPage, ExplorePage} from './pages'
+import useResetCode from "./redux/useResetCode"
 
 function App() {
+
+  useResetCode()
 
   return (
     <>
