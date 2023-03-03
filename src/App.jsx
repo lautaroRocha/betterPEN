@@ -1,26 +1,32 @@
-import { Header, EditorLayout } from "./components"
-import useRecoverCode from "./hooks/useRecoverCode"
+import { Header} from "./components"
 import {Toaster} from 'react-hot-toast'
-
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import {HomePage, EditorPage, ExplorePage} from './pages'
+import useResetCode from "./redux/useResetCode"
 
 function App() {
 
-  useRecoverCode()
+  useResetCode()
 
   return (
     <>
       <Toaster  position="top-right"
             reverseOrder={false}
             toastOptions={{
-              className: '',
               style: {
                 background: 'hsl(0, 3%, 28%)',
                 padding: '16px',
                 color: 'rgb(236, 220, 47)',
                 fontWeight: 'light'
               }}} />
+      <BrowserRouter>
       <Header/>
-      <EditorLayout />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/editor/*" element={<EditorPage/>}/>
+        <Route path="/explore" element={<ExplorePage/>}/>
+      </Routes>
+      </BrowserRouter>
     </>
   
   )

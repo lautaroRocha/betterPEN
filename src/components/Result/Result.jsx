@@ -4,6 +4,7 @@ import useEncodeCode from '../../hooks/useEncodeCode';
 const Result = () => {
 
     useEncodeCode()
+    
     const code = useSelector((state) => state.code)
 
     const {html, css, js} = code
