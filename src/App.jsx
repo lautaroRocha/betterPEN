@@ -17,7 +17,8 @@ function App() {
                 background: 'hsl(0, 3%, 28%)',
                 padding: '16px',
                 color: 'rgb(236, 220, 47)',
-                fontWeight: 'light'
+                fontWeight: 'light',
+                zIndex: '3'
               }}} />
       <BrowserRouter>
       <Header/>
