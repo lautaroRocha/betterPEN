@@ -10,7 +10,7 @@ function App() {
 
   return (
     <>
-      <Toaster  position="top-right"
+      <Toaster  position="bottom-right"
             reverseOrder={false}
             toastOptions={{
               style: {
