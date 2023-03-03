@@ -3,9 +3,18 @@
     margin: auto;
     margin-top: 6rem;
     padding: 3rem;
-    display: grid;
-    grid-gap: 4rem;
-    grid-template-columns: repeat(auto-fill,minmax(300px, 1fr));
-    grid-template-rows: repeat(auto-fill,minmax(300px, 1fr));
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+ 
+}
+
+@media(min-width:600px){
+    .pens-gallery{
+        display: grid;
+        grid-gap: 4rem;
+        grid-template-columns: repeat(auto-fill,minmax(300px, 1fr));
+        grid-template-rows: repeat(auto-fill,minmax(300px, 1fr));
+    }
 }
 

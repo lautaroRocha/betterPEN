@@ -9,7 +9,6 @@ const EditorPage = () => {
     const dispatch = useDispatch()
     let view 
 
-
     useEffect(() => {
         dispatch(setHasNavigatedAway(false))
         const handleBeforeUnload = () => {

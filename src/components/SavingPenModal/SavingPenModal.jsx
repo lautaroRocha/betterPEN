@@ -23,10 +23,11 @@ const SavingPenModal = ({isOpen, closeModal}) => {
 
     const uploadPen = (e) => {
         e.preventDefault()
+        const successNotify = () => toast.success('Pen saved!')
         const {title, author} = penData
         saveToDatabase(title, author, code)
-        toast.success('Pen saved!')
-        setTimeout(closeModal, 3000)
+        setTimeout(closeModal, 2000)
+        setTimeout(successNotify, 3000)
     }
 
     return(
