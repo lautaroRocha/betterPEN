@@ -13,7 +13,7 @@ body, html{
   position: relative;
   overflow-x: hidden;
   background-color: hsl(0, 0%, 15%);
-
+  color: #ecdc2f;
 }
 *{
   box-sizing: border-box;
