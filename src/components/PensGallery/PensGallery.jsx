@@ -24,9 +24,16 @@ function PensGallery() {
 
 
   return (
-    <div className="pens-gallery">
-        {Object.keys(pens).length > 0 ? pens.map( (pen, idx) => {return(<SavedPenMiniature pen={pen} key={idx}/>)}) : <Spinner/>}
-    </div>
+    <>
+        {Object.keys(pens).length > 0 ? 
+            <div className="pens-gallery">
+                {pens.map( (pen, idx) => {return(<SavedPenMiniature pen={pen} key={idx}/>)}) }
+            </div>
+            : 
+            <div className="spinner-container">
+                <Spinner/>
+            </div>}
+        </>
   )
 }
 
